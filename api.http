@@ -1,0 +1,41 @@
+
+@host = http://localhost:3000
+@id = 1c2c927a-b2bf-40f2-b0dd-cd733c8e1750 
+
+# hello
+POST {{host}}/hello
+Content-Type: application/json
+
+{
+    "name": "Chondan"
+}
+
+### -----
+
+# create todo
+POST {{host}}/todos
+Content-Type: application/json
+
+{
+    "name": "Codejam"
+}
+
+### -----
+
+# get all todos
+GET {{host}}/todos
+
+### -----
+
+# update todo
+PUT {{host}}/todo/{{id}}
+Content-Type: application/json
+
+{
+    "name": "Codejam",
+    "done": true 
+}
+
+### -----
+# delete todo
+DELETE  {{host}}/todo/{{id}}
